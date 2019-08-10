@@ -4,6 +4,11 @@ class CompositionsController < ApplicationController
         render json: compositions
     end
 
+    def show
+        composition = Composition.find(params[:id])
+        render json: composition
+    end
+
     def new
         composition = Composition.new
     end
@@ -14,6 +19,17 @@ class CompositionsController < ApplicationController
         composition.save
 
         render json: composition
+    end
+
+    def edit
+
+    end
+
+    def update
+        composition = Composition.find(params[:id])
+        composition.update(title: params[:title])
+        compositions = Composition.all
+        render json: compositions
     end
 
     private

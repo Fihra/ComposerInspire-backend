@@ -12,3 +12,4 @@ Composition.destroy_all
 user1 = User.create(name: "Fabian")
 
 comp1 = Composition.create(title: "New Piece", user: user1)
+comp2 = Composition.create(title: "My second Piece", user: user1)
