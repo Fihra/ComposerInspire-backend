@@ -14,20 +14,21 @@ class CompositionsController < ApplicationController
     end
 
     def create
-        composition = Composition.create(title: composition_params[:title])
-
+        composition = Composition.new(title: composition_params[:title], user_id: composition_params[:user_id])
+        # byebug
         composition.save
-
         render json: composition
-    end
-
-    def edit
-
     end
 
     def update
         composition = Composition.find(params[:id])
         composition.update(title: params[:title])
+        render json: composition
+    end
+
+    def destroy
+        composition = Composition.find(params[:id])
+        composition.destroy
         compositions = Composition.all
         render json: compositions
     end
