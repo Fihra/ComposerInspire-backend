@@ -1,7 +1,7 @@
 class CompositionsController < ApplicationController
     def index
         compositions = Composition.all
-        render json: compositions
+        render json: compositions, include: [:songreferences]
     end
 
     def show
@@ -15,7 +15,6 @@ class CompositionsController < ApplicationController
 
     def create
         composition = Composition.new(title: composition_params[:title], user_id: composition_params[:user_id])
-        # byebug
         composition.save
         render json: composition
     end
