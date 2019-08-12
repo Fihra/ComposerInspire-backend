@@ -15,6 +15,12 @@ class SongreferencesController < ApplicationController
         songreference.save
         render json: songreference
     end
+
+    def destroy
+        songreference = Songreference.find(params[:id])
+        songreference.destroy
+        render json: songreference
+    end
     
     private
 
