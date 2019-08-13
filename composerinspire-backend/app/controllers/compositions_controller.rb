@@ -1,7 +1,7 @@
 class CompositionsController < ApplicationController
     def index
         compositions = Composition.all
-        render json: compositions, include: [:songreferences]
+        render json: compositions, include: [:songreferences, :scales]
     end
 
     def show

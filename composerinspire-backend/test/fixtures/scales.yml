@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  scale_name: MyString
+  composition: one
+
+two:
+  scale_name: MyString
+  composition: two

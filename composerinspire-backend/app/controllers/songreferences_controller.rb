@@ -4,8 +4,6 @@ class SongreferencesController < ApplicationController
         render json: songreferences
     end
 
-
-
     def new
         songreference = Songreference.new
     end

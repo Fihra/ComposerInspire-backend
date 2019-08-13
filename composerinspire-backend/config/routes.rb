@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :scales
   resources :songreferences
   resources :compositions
   resources :users
