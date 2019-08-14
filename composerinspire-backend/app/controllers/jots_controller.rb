@@ -4,6 +4,11 @@ class JotsController < ApplicationController
         render json: jots
     end
 
+    def show
+        jot = Jot.find(params[:id])
+        render json: jot
+    end
+
     def new
         jot = Jot.new
     end
@@ -15,7 +20,7 @@ class JotsController < ApplicationController
     end
 
     def destroy
-        jot =  Jot.find(params[:id])
+        jot = Jot.find(params[:id])
         jot.destroy
         render json: jot
     end
