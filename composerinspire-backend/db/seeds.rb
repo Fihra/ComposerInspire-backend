@@ -11,6 +11,7 @@ Composition.destroy_all
 Songreference.destroy_all
 Scale.destroy_all
 Jot.destroy_all
+Instrument.destroy_all
 
 user1 = User.create(name: "Fabian")
 
@@ -41,3 +42,7 @@ jot2 = Jot.create(content: "Planning to add trumpets and horns", composition: co
 jot3 = Jot.create(content: "Needs some synthesizers", composition: comp2)
 jot4 = Jot.create(content: "Add some time meter changes", composition: comp3)
 jot5 = Jot.create(content: "Need some of that jazz spicyness", composition: comp4)
+
+instrument1 = Instrument.create(instrument_name: "Piano", composition: comp2)
+instrument2 = Instrument.create(instrument_name: "Flute", composition: comp3)
+instrument3 = Instrument.create(instrument_name: "Viola", composition: comp4)
