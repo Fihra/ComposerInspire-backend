@@ -10,9 +10,14 @@ class InstrumentsController < ApplicationController
     end
 
     def create
-        instrument = Instrument.new(instrument_name: instrument_params[:instrument_name], composition_id: instrument_params[:composition_id])
-        instrument.save
-        render json: instrument
+        # byebug
+        instrument_array = instrument_params[:instrument_name].split(', ')
+        saved_instruments = instrument_array.map do |i|
+            instrument = Instrument.new(instrument_name: i, composition_id: instrument_params[:composition_id])
+            instrument.save
+            instrument
+        end
+        render json: saved_instruments
     end
 
     def destroy
